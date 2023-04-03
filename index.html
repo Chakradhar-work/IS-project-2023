@@ -165,12 +165,13 @@
     <script>
       
       var isClose=true;
-        const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom","for","which"];
+        const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom","for","which","where"];
         var editor = "sorts\n" +
     
     "   #people = {tommy, alex, john, daniel, sarah, peter, lino}.\n" +
     "   #gender = {male, female}.\n" +
-    "   #courses = {isys,aos,toa,crypto,aoa}.\n" +
+    "   #courses = {intelligentsystems,aos,toa,crypto,aoa}.\n" +
+    "   #code = {cs5368,cs5381,cs6343}.\n" +
     "   #semester = {fall,spring,alsem}.\n" +
     "   #lastnames = {aToe,fToz}.\n" +
     "   #location = {biobuilding, holdenhall}.\n" +
@@ -180,24 +181,19 @@
     "   courses(#courses,#semester).\n" +
     "   advisor(#people,#lastnames).\n" +
     "   meets(#courses,#location).\n" +
-    "   friend(#people, #people).\n" +
-    "   gender(#people, #gender).\n" +
-    "   spanish(#people).\n" +
+    "   courseCode(#courses,#code).\n" +
+    
     "rules\n"+
     
     "   advisor(tommy, aToe).\n" +
     "   advisor(alex, fToz).\n" +
     "   courses(isys,spring).\n" +
     "   courses(aos,spring).\n" +
-    "   meets(isys,holdenhall).\n" +
-    "   meets(aoa,biobuilding).\n" +
-    "   friend(lino, alex).\n" +
-    "   friend(lino, peter).\n" +
-    "   friend(sarah, alex).\n" +
-    "   gender(tommy, male).\n" +
-    "   gender(lino, male).\n" +
-    "   gender(sarah, female).\n" +
-    "   spanish(lino).";
+    "   courseCode(aoa,cs5381).\n" +
+    "   courseCode(intelligentsystems,cs5368).\n" +
+    "   meets(intelligentsystems,holdenhall).\n" +
+    "   meets(aoa,biobuilding).";
+    
         // sorts
         var contstring = editor.split("sorts\n")[1].split("predicates\n");
         var sortstring = contstring[0].split('.');
