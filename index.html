@@ -181,7 +181,7 @@
     "   courses(#courses,#semester).\n" +
     "   advisor(#people,#lastnames).\n" +
     "   meets(#courses,#location).\n" +
-    "   courseCode(#code,#courses).\n" +
+    "   courseCode(#courses,#code).\n" +
     "   courseTitle(#courses,#code).\n" +
     
     "rules\n"+
@@ -190,9 +190,9 @@
     "   advisor(alex, fToz).\n" +
     "   courses(intelligentsystems,spring).\n" +
     "   courses(aos,spring).\n" +
-    "   courseCode(cs5381,aoa).\n" +
-    "   courseCode(cs5368,intelligentsystems).\n" +
-    "   courseTitle(X,Y):-  courseCode(X,Y) .\n" +
+    "   courseCode(aoa,cs5381).\n" +
+    "   courseCode(intelligentsystems,cs5368).\n" +
+    "   courseTitle(X,Y):-  courseCode(Y,X) .\n" +
     "   meets(intelligentsystems,holdenhall).\n" +
     "   meets(aoa,biobuilding).";
     
