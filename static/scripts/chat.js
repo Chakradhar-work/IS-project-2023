@@ -35,7 +35,7 @@ function getTime() {
 
 // Gets the first message
 function firstBotMessage() {
-    let firstMessage = ""
+    let firstMessage = "Ask Any Quire?"
     document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + firstMessage + '</span></p>';
 
     let time = getTime();
@@ -49,7 +49,7 @@ firstBotMessage();
 // Retrieves the response
 function getHardResponse(userText) {
     let botResponse = getBotResponse(userText);
-    let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
+    let botHtml = '<p class="botTex"><span>' + botResponse + '</span></p>';
     $("#chatbox").append(botHtml);
 
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
@@ -57,10 +57,10 @@ function getHardResponse(userText) {
 
 //Gets the text text from the input box and processes it
 function getResponse() {
-    let userText = $("#textInput").val();
+    let userText = $("#text-input").val();
 
-    if (userText == "") {
-        userText = "";
+    if (userText === "Ask") {
+        userText = "Askbjh";
     }
 
     let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
@@ -91,6 +91,7 @@ function buttonSendText(sampleText) {
 
 function sendButton() {
     getResponse();
+    console.log("clicking")
 }
 
 function heartButton() {
