@@ -239,8 +239,8 @@
     "   #lastnames = {aToe,fToz}.\n" +
     "   #location = {biobuilding, holdenhall}.\n" +
     "   #day={mwf,tuethur}.\n" +
-    "   #time = {between_11AM_12PM,between_12PM_1PM,between_2PM_3PM,between_3PM_4PM,between_9AM_10AM}.\n" +
-       
+    "   #time = {mwf_between_11AM_12PM,mwf_between_3PM_4PM,mwf_between_4PM_5PM,tuethur_between_9AM_11AM,tuethur_between_6PM_8PM}.\n" +
+            
     "predicates\n" +
     
     "   courses(#courses,#semester).\n" +
@@ -248,8 +248,8 @@
     "   meets(#courses,#location).\n" +
     "   courseCode(#code,#courses).\n" +
     "   courseTitle(#courses,#code).\n" +
-    "   courseTiming(#time, #courses).\n" +
-    "   courseDay(#day,#courses).\n" +
+    "   instructor(#people,#courses).\n" +
+    "   courseSchedule(#time, #courses).\n" +
     "   bothSemesters(#courses).\n" +
     
     
@@ -264,9 +264,9 @@
     "   bothSemesters(X):- courses(X,fall), courses(X,spring).\n" +
     "   courseCode(cs5381,aoa).\n" +
     "   courseCode(cs5368,intelligentsystems).\n" +
+    "   instructor(zhang,intelligentsystems).\n" +
     "   courseTitle(X,Y):-  courseCode(Y,X) .\n" +
-    "   courseTiming(between_9AM_10AM,intelligentsystems).\n" +
-    "   courseDay(mwf,intelligentsystems).\n" +
+    "   courseSchedule(mwf_between_4PM_5PM,intelligentsystems).\n" +
     "   meets(intelligentsystems,holdenhall).\n" +
     "   meets(aoa,biobuilding).";
     
