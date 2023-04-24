@@ -31,7 +31,7 @@ function getTime() {
 
     let time = hours + ":" + minutes;
     return time;
-}
+} 
 
 // Gets the first message
 function firstBotMessage() {
